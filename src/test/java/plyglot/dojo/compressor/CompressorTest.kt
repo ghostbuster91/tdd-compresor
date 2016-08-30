@@ -18,5 +18,6 @@ class CompressorTest {
     @Test
     fun shouldCombineTwoLettersToNumberAndLetter() {
         assertEquals("2A", compress("AA"))
+        assertEquals("2B", compress("BB"))
     }
 }
