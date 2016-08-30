@@ -1,6 +1,7 @@
 package plyglot.dojo.compressor
 
 import org.junit.Assert
+import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class CompressorTest {
@@ -11,6 +12,11 @@ class CompressorTest {
 
     @Test
     fun shouldReturnUnmodifiedInput() {
-        Assert.assertEquals("A", compress("A"))
+        assertEquals("A", compress("A"))
+    }
+
+    @Test
+    fun shouldCombineTwoLettersToNumberAndLetter() {
+        assertEquals("2A", compress("AA"))
     }
 }
