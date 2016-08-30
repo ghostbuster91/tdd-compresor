@@ -20,4 +20,14 @@ class CompressorTest {
         assertEquals("2A", compress("AA"))
         assertEquals("2B", compress("BB"))
     }
+
+    @Test
+    fun shouldHandlePairAndReturnRestUnmodified() {
+        assertEquals("2AB", compress("AAB"))
+    }
+
+    @Test
+    fun shouldHandleTwoPairs() {
+        assertEquals("2A2B", compress("AABB"))
+    }
 }
