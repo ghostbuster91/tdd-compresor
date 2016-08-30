@@ -2,6 +2,7 @@ package plyglot.dojo.compressor
 
 import org.junit.Assert
 import org.junit.Assert.assertEquals
+import org.junit.Ignore
 import org.junit.Test
 
 class CompressorTest {
@@ -13,6 +14,7 @@ class CompressorTest {
     @Test
     fun shouldReturnUnmodifiedInput() {
         assertEquals("A", compress("A"))
+        assertEquals("AB", compress("AB"))
     }
 
     @Test
@@ -24,10 +26,17 @@ class CompressorTest {
     @Test
     fun shouldHandlePairAndReturnRestUnmodified() {
         assertEquals("2AB", compress("AAB"))
+        assertEquals("A2BA", compress("ABBA"))
+
     }
 
     @Test
     fun shouldHandleTwoPairs() {
         assertEquals("2A2B", compress("AABB"))
+    }
+
+    @Test
+    fun shouldHandleATriplet() {
+        assertEquals("3A", compress("AAA"))
     }
 }
